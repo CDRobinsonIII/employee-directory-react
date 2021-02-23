@@ -1,15 +1,28 @@
 import React from "react";
 import EmployeeCard from "./EmployeeCard";
 
+const styles = {
+    table: {
+        border: "1px solid black",
+        width: "80%"
+    },
+    th: {
+        border: "1px solid black",
+        color: "white",
+        backgroundColor: "#282c34",
+        alignText: "center"
+    }
+  };
+
 export default function FetchEmployees(props) {
     return (
-        <table>
+        <table style={styles.table}>
             <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>DOB</th>
+                <th style={styles.th}>Image</th>
+                <th style={styles.th}>Name</th>
+                <th style={styles.th}>Phone</th>
+                <th style={styles.th}>Email</th>
+                <th style={styles.th}>DOB</th>
             </tr>
             {props.employees.map(employee =>
                 <EmployeeCard

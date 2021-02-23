@@ -24,13 +24,16 @@ class App extends React.Component {
   render() {
 
     return (
-      <div className="App-header">
-        <p className="App-title"> Employee Directory</p>
-        <p className="App-subtitle">Enter a name in the search field to find an employee or click on the name field to sort employee directory in ascending or descending order.</p>
-
-        {/* Input search button here... */}
-        {/* employee directory here... */}
-        <FetchEmployees employees={this.state.filteredEmployees} />
+      <div>
+        <div className="App-header">
+          <p className="App-title"> Employee Directory</p>
+          <p className="App-subtitle">Enter a name in the search field to find an employee or click on the name field to sort employee directory in ascending or descending order.</p>
+          {/* Input search button here... */}
+        </div>
+        <div className="App-employee-list">
+          {/* employee directory here... */}
+          <FetchEmployees employees={this.state.filteredEmployees} />
+        </div>
       </div>
     );
   }
