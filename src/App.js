@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import React from "react";
 import './App.css';
-import FetchEmployees from "./components/FetchEmployee";
+import EmployeeTable from "./components/EmployeeTable";
 
 
 class App extends React.Component {
@@ -27,7 +27,7 @@ class App extends React.Component {
 
     // Updating the input's state
     this.setState({ search: event.target.value });
-    
+
     // const filteredArray = this.state.filteredEmployees.filter(function (el) {
     //   return el.first === this.state.search
     // })
@@ -57,7 +57,7 @@ class App extends React.Component {
         </div>
         <div className="App-employee-list">
           {/* employee directory here... */}
-          <FetchEmployees employees={this.state.filteredEmployees} />
+          <EmployeeTable employees={this.state.filteredEmployees} />
         </div>
       </div>
     );
