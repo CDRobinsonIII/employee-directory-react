@@ -9,15 +9,17 @@ class App extends React.Component {
   state = {
     loading: true,
     employees: [],
+    copyOfEmployees: [],
     filteredEmployees: [],
-    search: ""
+    search: "",
+    sortOrder: 'asc'
   }
 
   async componentDidMount() {
-    const url = "https://randomuser.me/api/?results=10&nat=us";
+    const url = "https://randomuser.me/api/?results=100&nat=us";
     const response = await fetch(url);
     const data = await response.json();
-    this.setState({ employees: data.results, loading: false, filteredEmployees: data.results });
+    this.setState({ employees: data.results, loading: false, copyOfEmployees: data.results, filteredEmployees: data.results });
     console.log(data.results);
     console.log(this.state.employees[0].name.first);
   }
@@ -28,11 +30,34 @@ class App extends React.Component {
     // Updating the input's state
     this.setState({ search: event.target.value });
 
-    // const filteredArray = this.state.filteredEmployees.filter(function (el) {
-    //   return el.first === this.state.search
-    // })
+    const filteredArray = this.state.copyOfEmployees.filter(function (el) {
+      return el.name.first.startsWith(event.target.value, 0)
+    })
 
-    // this.setState ({ filteredEmployees: filteredArray})
+    this.setState({ filteredEmployees: filteredArray })
+
+  };
+
+  handleSortOnClick = (event) => {
+    event.preventDefault();
+
+    if (this.state.sortOrder === 'asc') {
+      const filteredArray = this.state.filteredEmployees
+        .sort((a, b) => (a.name.first > b.name.first) ? 1 : -1);
+
+      this.setState({ sortOrder: 'dsc' });
+
+      this.setState({ filteredEmployees: filteredArray });
+    }
+    else {
+      const filteredArray = this.state.filteredEmployees
+        .sort((a, b) => (a.name.first < b.name.first) ? 1 : -1);
+
+      this.setState({ sortOrder: 'asc' });
+
+      this.setState({ filteredEmployees: filteredArray });
+
+    }
 
   };
 
@@ -50,10 +75,11 @@ class App extends React.Component {
               name="search"
               onChange={this.handleInputChange}
               type="text"
-              onKeyPress={e => { if (e.key === 'Enter') e.preventDefault()}}
+              onKeyPress={e => { if (e.key === 'Enter') e.preventDefault() }}
             // placeholder="Search in here..."
             />
           </form>
+          <button onClick={this.handleSortOnClick}>Click here to sort the list by name.</button>
         </div>
         <div className="App-employee-list">
           {/* employee directory here... */}
