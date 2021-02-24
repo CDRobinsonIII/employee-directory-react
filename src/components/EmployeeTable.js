@@ -20,7 +20,7 @@ export default function FetchEmployees(props) {
             <tbody>
                 <tr>
                     <th style={styles.th}>Image</th>
-                    <th style={styles.th}>Name</th>
+                    <th onClick ={props.sortClick} style={styles.th}>Name <span>{props.currentSort}</span></th>
                     <th style={styles.th}>Phone</th>
                     <th style={styles.th}>Email</th>
                     <th style={styles.th}>DOB</th>

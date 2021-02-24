@@ -12,7 +12,7 @@ class App extends React.Component {
     copyOfEmployees: [],
     filteredEmployees: [],
     search: "",
-    sortOrder: 'asc'
+    sortOrder: ''
   }
 
   async componentDidMount() {
@@ -27,11 +27,19 @@ class App extends React.Component {
   handleInputChange = (event) => {
     event.preventDefault();
 
+    function firstUpper(word) {
+      if (word !== "")
+        return word[0].toUpperCase() + word.slice(1)
+      else return word = ""
+    }
+
+    const searchTerm = firstUpper(event.target.value);
+
     // Updating the input's state
-    this.setState({ search: event.target.value });
+    this.setState({ ...this.state, search: searchTerm });
 
     const filteredArray = this.state.copyOfEmployees.filter(function (el) {
-      return el.name.first.startsWith(event.target.value, 0)
+      return el.name.first.startsWith(searchTerm, 0)
     })
 
     this.setState({ filteredEmployees: filteredArray })
@@ -41,17 +49,17 @@ class App extends React.Component {
   handleSortOnClick = (event) => {
     event.preventDefault();
 
-    if (this.state.sortOrder === 'asc') {
+    if (this.state.sortOrder === 'asc' || this.state.sortOrder === "") {
       const filteredArray = this.state.filteredEmployees
-        .sort((a, b) => (a.name.first > b.name.first) ? 1 : -1);
+        .sort((a, b) => (a.name.first < b.name.first) ? 1 : -1);
 
-      this.setState({ sortOrder: 'dsc' });
+      this.setState({ sortOrder: 'desc' });
 
       this.setState({ filteredEmployees: filteredArray });
     }
     else {
       const filteredArray = this.state.filteredEmployees
-        .sort((a, b) => (a.name.first < b.name.first) ? 1 : -1);
+        .sort((a, b) => (a.name.first > b.name.first) ? 1 : -1);
 
       this.setState({ sortOrder: 'asc' });
 
@@ -79,11 +87,11 @@ class App extends React.Component {
             // placeholder="Search in here..."
             />
           </form>
-          <button onClick={this.handleSortOnClick}>Click here to sort the list by name.</button>
+          {/* <button onClick={this.handleSortOnClick}>Click here to sort the list by name.</button> */}
         </div>
         <div className="App-employee-list">
           {/* employee directory here... */}
-          <EmployeeTable employees={this.state.filteredEmployees} />
+          <EmployeeTable currentSort={this.state.sortOrder === '' ? '' : this.state.sortOrder === 'asc' ? 'asc' : 'desc'} employees={this.state.filteredEmployees} sortClick={this.handleSortOnClick} />
         </div>
       </div>
     );
