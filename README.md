@@ -40,7 +40,7 @@ You have two options to run the employee directory react application.
    ```
    
    Then go to your browser and enter this link: http://localhost:3000/</li> 
-   <li>You can also visit the deployed application via the deployed Github Pages link: ____________________________________________
+   <li>You can also visit the deployed application via the deployed Github Pages link: https://cdrobinsoniii.github.io/employee-directory-react/
    <p></p>
     Once you start the application, you can search for certain employees and sort the list via the “Name” table header. 
    </li>
