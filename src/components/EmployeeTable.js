@@ -11,6 +11,13 @@ const styles = {
         color: "white",
         backgroundColor: "#282c34",
         alignText: "center"
+    },
+    thName: {
+        border: "1px solid black",
+        color: "white",
+        backgroundColor: "#282c34",
+        alignText: "center",
+        cursor: "pointer"
     }
   };
 
@@ -20,7 +27,7 @@ export default function FetchEmployees(props) {
             <tbody>
                 <tr>
                     <th style={styles.th}>Image</th>
-                    <th onClick ={props.sortClick} style={styles.th}>Name <span>{props.currentSort}</span></th>
+                    <th onClick ={props.sortClick} style={styles.thName}>Name <span>{props.currentSort}</span></th>
                     <th style={styles.th}>Phone</th>
                     <th style={styles.th}>Email</th>
                     <th style={styles.th}>DOB</th>
