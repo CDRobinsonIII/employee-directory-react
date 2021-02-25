@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# employee-directory-react
+![GitHub License](https://img.shields.io/badge/License-MIT-blue) 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description 
+The mission of this project was to create a React application to display an employee directory. No starter code was provided for this project. I started the application using npx create-react-app. The employee information is retrieved via an API call to the Random User API.  The application allows the user to search the employee directory via the search input box. The user can also sort the employee directory list (alternating between ascending and descending order) by clicking on the “Name” header in the table. 
 
-## Available Scripts
+## Table of Contents
+* [Technologies Used](#technologies-used)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
-In the project directory, you can run:
 
-### `npm start`
+## Technologies Used
+<ul>
+   <li>HTML/CSS/JavaScript</li> 
+   <li>React JS</li>
+</ul>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
+To install the employee directory react application you will have to fork the repository and then clone the repository to your local machine. Once you CD into the directory of the employee directory react you will need to install the required packages via the following command: 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+NPM install
+```
 
-### `npm test`
+## Usage 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You have two options to run the employee directory react application. 
+<ol>
+   <li>If you fork the repository, after you install the required modules, you will have to enter the following command line: 
 
-### `npm run build`
+   ```   
+   NPM start
+   ```
+   
+   Then go to your browser and enter this link: http://localhost:3000/</li> 
+   <li>You can also visit the deployed application via the deployed Github Pages link: ____________________________________________
+   <p></p>
+    Once you start the application, you can search for certain employees and sort the list via the “Name” table header. 
+   </li>
+</ol>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## License
+This project is licensed under the MIT license.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributing
+If you would like to contribute to this repository and help improve it, your contributions would be welcomed. Please contact me via my contact information provided below. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tests
+There are no built-in tests for the employee directory react application. You can test the application by searching for various names in the list. You can also test the sorting featuring by seeing if the names are sorted correctly. 
 
-### `npm run eject`
+## Questions
+If you have any questions about this README generator application or to report any issues with the application please email me at charlesdalerobinson@gmail.com.
+Please visit my github page to review my other repositories: [CDRobinsonIII](https://github.com/CDRobinsonIII)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Screenshots of the employee directory react application in use:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Here is a screenshot of the index page of the employee directory react application.](/public/images/screen-shot-01.jpg)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Here is a screenshot of the search input function of the employee directory react application.](/public/images/screen-shot-02.jpg)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![Here is a screenshot of the ascending sort by name function of the employee directory react application.](/public/images/screen-shot-03.jpg)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Here is a screenshot of the descending sort by name function of the employee directory react application.](/public/images/screen-shot-04.jpg)
