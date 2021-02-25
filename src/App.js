@@ -49,11 +49,11 @@ class App extends React.Component {
   handleSortOnClick = (event) => {
     event.preventDefault();
 
-    if (this.state.sortOrder === 'asc' || this.state.sortOrder === "") {
+    if (this.state.sortOrder === '^' || this.state.sortOrder === "") {
       const filteredArray = this.state.filteredEmployees
         .sort((a, b) => (a.name.first < b.name.first) ? 1 : -1);
 
-      this.setState({ sortOrder: 'desc' });
+      this.setState({ sortOrder: 'v' });
 
       this.setState({ filteredEmployees: filteredArray });
     }
@@ -61,7 +61,7 @@ class App extends React.Component {
       const filteredArray = this.state.filteredEmployees
         .sort((a, b) => (a.name.first > b.name.first) ? 1 : -1);
 
-      this.setState({ sortOrder: 'asc' });
+      this.setState({ sortOrder: '^' });
 
       this.setState({ filteredEmployees: filteredArray });
 
@@ -91,7 +91,7 @@ class App extends React.Component {
         </div>
         <div className="App-employee-list">
           {/* employee directory here... */}
-          <EmployeeTable currentSort={this.state.sortOrder === '' ? '' : this.state.sortOrder === 'asc' ? 'asc' : 'desc'} employees={this.state.filteredEmployees} sortClick={this.handleSortOnClick} />
+          <EmployeeTable currentSort={this.state.sortOrder === '' ? '' : this.state.sortOrder === '^' ? '^' : 'v'} employees={this.state.filteredEmployees} sortClick={this.handleSortOnClick} />
         </div>
       </div>
     );
