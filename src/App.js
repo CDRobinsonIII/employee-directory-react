@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
-    const url = "https://randomuser.me/api/?results=10&nat=us";
+    const url = "https://randomuser.me/api/?results=100&nat=us";
     const response = await fetch(url);
     const data = await response.json();
     this.setState({ employees: data.results, loading: false, copyOfEmployees: data.results, filteredEmployees: data.results });

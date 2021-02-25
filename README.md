@@ -5,13 +5,15 @@
 The mission of this project was to create a React application to display an employee directory. No starter code was provided for this project. I started the application using npx create-react-app. The employee information is retrieved via an API call to the Random User API.  The application allows the user to search the employee directory via the search input box. The user can also sort the employee directory list (alternating between ascending and descending order) by clicking on the “Name” header in the table. 
 
 ## Table of Contents
-* [Technologies Used](#technologies-used)
-* [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
-* [Contributing](#contributing)
-* [Tests](#tests)
-* [Questions](#questions)
+  * [Description](#description)
+  * [Technologies Used](#technologies-used)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  * [Screenshots of the employee directory react application in use:](#screenshots-of-the-employee-directory-react-application-in-use-)
 
 
 ## Technologies Used
